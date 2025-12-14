@@ -12,15 +12,15 @@ function HomePage() {
           <p className="eyebrow">Frontend studio</p>
           <h1>Polished UI patterns without the corporate beige.</h1>
           <p className="lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec euismod posuere a aliquam
-            mattis ac sed nibh tincidunt non ultrices.
+            Curating concise React know-how and tasteful UI ideas for builders who want
+            to ship fast without looking generic.
           </p>
           <div className="hero-actions">
             <Link to="/articles" className="button-link primary">
               Browse articles
             </Link>
             <Link to="/about" className="button-link secondary">
-              About the team
+              About us
             </Link>
           </div>
           <div className="stats">
@@ -46,8 +46,7 @@ function HomePage() {
               alt="Design desk with colorful UI elements"
             />
             <p className="muted">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices in velit varius
-              rutrum vitae arcu.
+              Clean patterns and real-world snippets for modern interfaces.
             </p>
           </div>
         </div>
@@ -57,33 +56,30 @@ function HomePage() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">Highlights</p>
-            <h2>What you get inside.</h2>
+            <h2>What you get inside</h2>
           </div>
-          <span className="muted">Clean patterns, real-world snippets.</span>
+          <span className="muted">Clean patterns, real-world snippets</span>
         </div>
         <div className="feature-grid">
           <div className="feature-card">
             <div className="feature-icon">UI</div>
             <h3>Layout recipes</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac sed augue sem sit bibendum
-              at dui varius.
+              Practical grid systems and spacing strategies that feel intentional, not template-driven.
             </p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">FE</div>
             <h3>React clarity</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies suspendisse
-              pellentesque auctor habitant amet.
+              Component patterns explained without the jargon. Build with confidence.
             </p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">UX</div>
             <h3>Microcopy cues</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nisl ultricies
-              dignissim vulputate est.
+              Small words, big impact. Learn to write interface text that guides and reassures.
             </p>
           </div>
         </div>
@@ -93,7 +89,7 @@ function HomePage() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">Articles</p>
-            <h2>Latest reads.</h2>
+            <h2>Latest reads</h2>
           </div>
           <Link to="/articles" className="button-link secondary">
             View all
@@ -104,12 +100,11 @@ function HomePage() {
             <div key={article.name} className="article-preview">
               <div className="article-meta">
                 <span className="pill">React</span>
-                <span className="muted">{article.content[0].substring(0, 30)}...</span>
               </div>
               <h3>{article.title}</h3>
-              <p>{article.content[0].substring(0, 150)}...</p>
-              <Link to={`/articles/${article.name}`} className="button-link secondary">
-                Read article
+              <p>{article.content[0].substring(0, 120)}...</p>
+              <Link to={`/articles/${article.name}`} className="button-link">
+                Read article →
               </Link>
             </div>
           ))}
