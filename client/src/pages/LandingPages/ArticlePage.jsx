@@ -16,7 +16,7 @@ function ArticlePage() {
         setError('');
         const { data } = await fetchArticleByName(name);
         const fetchedArticle = data?.article;
-        if (fetchedArticle && fetchedArticle.isActive !== false) {
+        if (fetchedArticle && fetchedArticle.status !== false) {
           setArticle(fetchedArticle);
         } else {
           setArticle(null);

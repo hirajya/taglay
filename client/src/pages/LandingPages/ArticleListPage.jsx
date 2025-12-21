@@ -13,7 +13,8 @@ function ArticleListPage() {
       try {
         setIsLoading(true);
         const { data } = await fetchArticles();
-        const activeArticles = (data?.articles || []).filter((article) => article.isActive);
+        // Backend already filters by status, but we can double-check here
+        const activeArticles = (data?.articles || []).filter((article) => article.status !== false);
         setArticleList(activeArticles);
       } catch (err) {
         console.error('Error loading articles', err);

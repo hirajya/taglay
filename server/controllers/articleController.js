@@ -2,7 +2,8 @@ const Article = require('../models/Article');
 
 const getArticles = async (req, res) => {
   try {
-    const articles = await Article.find();
+    // Only return active articles for the public list
+    const articles = await Article.find({ status: true });
     res.json({ articles });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -30,7 +31,7 @@ const updateArticle = async (req, res) => {
 const toggleArticleStatus = async (req, res) => {
   try {
     const article = await Article.findById(req.params.id);
-    article.isActive = !article.isActive;
+    article.status = !article.status;
     await article.save();
     res.json(article);
   } catch (error) {
@@ -40,7 +41,8 @@ const toggleArticleStatus = async (req, res) => {
 
 const getArticleByName = async (req, res) => {
   try {
-    const article = await Article.findOne({ name: req.params.name, isActive: true });
+    // Allow viewing any article by name (regardless of status)
+    const article = await Article.findOne({ name: req.params.name });
     if (!article) {
       return res.status(404).json({ message: 'Article not found' });
     }
