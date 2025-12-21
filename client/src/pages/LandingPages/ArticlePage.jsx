@@ -14,14 +14,18 @@ function ArticlePage() {
       try {
         setIsLoading(true);
         setError('');
+        console.log('Fetching article with name:', name);
         const { data } = await fetchArticleByName(name);
+        console.log('Received data:', data);
         const fetchedArticle = data?.article;
         if (fetchedArticle && fetchedArticle.status !== false) {
           setArticle(fetchedArticle);
         } else {
+          console.log('Article not found or status is false');
           setArticle(null);
         }
       } catch (err) {
+        console.error('Error fetching article:', err);
         if (err?.response?.status === 404) {
           setArticle(null);
         } else {
